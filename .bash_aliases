@@ -6,10 +6,14 @@ alias dl='cd ~/Downloads/'
 alias dc='cd ~/Documentos/'
 alias go='cd ~/Govone/'
 
-# Docker
-alias dk='docker kill $(docker ps -q)' # Stop all containers
-alias dgo='docker start my_elasticsearch my_redis2 my_postgres my_pgadmin my_rabbitmq'
+# System
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
 
+# Docker
+# Stop all containers
+alias dk='docker kill $(docker ps -q)'
+alias dgo='docker start my_elasticsearch my_redis2 my_postgres my_pgadmin my_rabbitmq'
 
 # Git
 alias gs='git status'
