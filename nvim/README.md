@@ -22,6 +22,7 @@
 | `<space>tv`        | Toggle vertical terminal                        |
 | `<space>g`         | Open LazyGit                                    |
 | `<space>p`         | Open containing folder                          |
+| `<space>s`         | Search for sessions                             |
 
 ## Telescope
 
