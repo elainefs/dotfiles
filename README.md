@@ -6,3 +6,4 @@ My dotfiles to customize my system.
 
 - [Neovim](nvim/README.md)
 - [.bash_aliases](.bash_aliases)
+- [.bashrc](.bashrc)
