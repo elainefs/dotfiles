@@ -1,14 +1,17 @@
 # Navigation
 alias ~='cd ~'
+alias ..='cd ..'
 alias gh='cd ~/Github/'
 alias my='cd ~/Github/myNotebook/'
-alias dl='cd ~/Downloads/'
-alias dc='cd ~/Documentos/'
+alias dow='cd ~/Downloads/'
+alias doc='cd ~/Documentos/'
 alias go='cd ~/Govone/'
 
 # System
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
+alias ll='ls -l'
+alias la='ls -A'
 
 # Docker
 # Stop all containers
@@ -18,6 +21,7 @@ alias dgo='docker start my_elasticsearch my_redis2 my_postgres my_pgadmin my_rab
 # Git
 alias gs='git status'
 alias gc='git checkout'
+alias gcb='git checkout -b'
 alias gb='git branch'
 
 # Python - Django
