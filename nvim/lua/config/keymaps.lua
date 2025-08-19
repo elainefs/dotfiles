@@ -44,11 +44,6 @@ map("v", ">", ">gv")
 -- Select all content
 map("n", "<C-a>", "ggVG")
 
--- Keymaps for Bufferline
--- These commands will move the current buffer backwards or forwards in the bufferline
-map("n", "<leader>+", ":BufferLineMoveNext<CR>")
-map("n", "<leader>_", ":BufferLineMovePrev<CR>")
-
 -- Open Containing Folder
 vim.keymap.set("n", "<leader>p", function()
   local path = vim.fn.expand("%:p:h") -- Get current dir file
@@ -92,3 +87,8 @@ function OpenFolder()
 end
 
 vim.keymap.set("n", "<leader>o", "<cmd>lua OpenFolder()<CR>", { desc = "Open Folder" })
+
+-- Keymaps for Bufferline
+-- These commands will move the current buffer backwards or forwards in the bufferline
+map("n", "<leader>+", ":BufferLineMoveNext<CR>")
+map("n", "<leader>_", ":BufferLineMovePrev<CR>")

@@ -93,8 +93,8 @@ return {
 				-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
 				-- Accept the completion
-				--["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-				["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+				["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+				-- ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 
 				-- Manually trigger a completion from nvim-cmp.
 				["<C-Space>"] = cmp.mapping.complete({}),

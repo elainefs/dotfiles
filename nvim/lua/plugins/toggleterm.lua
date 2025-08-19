@@ -3,7 +3,7 @@ return {
   version = "*",
   config = function()
     require("toggleterm").setup({
-      size = 30,
+      size = 10,
       open_mapping = [[<C-j>]],
       shade_terminals = true,
       shading_factor = 2,

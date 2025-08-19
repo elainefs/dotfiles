@@ -13,3 +13,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
+-- Show vertical line on specific file types 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.colorcolumn = "79"
+    vim.cmd([[highlight ColorColumn guibg=#2f2f2f]])
+  end,
+})
