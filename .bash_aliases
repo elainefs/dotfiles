@@ -12,11 +12,12 @@ alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 alias ll='ls -l'
 alias la='ls -A'
+alias cp='cp -i'
 
 # Docker
 # Stop all containers
 alias dk='docker kill $(docker ps -q)'
-alias dgo='docker start my_elasticsearch my_redis2 my_postgres my_pgadmin my_rabbitmq'
+alias dgo='docker start my_elasticsearch my_redis my_postgres my_pgadmin my_rabbitmq'
 
 # Git
 alias gs='git status'

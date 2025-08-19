@@ -102,6 +102,7 @@ eval "$(pyenv init -)"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export EDITOR=nvim
 export VISUAL=nvim
+export GIT_EDITOR=nvim
 
 # Deno
 . "/home/elaine/.deno/env"
@@ -115,3 +116,14 @@ gray="\[\033[0;37m\]"
 reset="\[\033[0m\]"
 
 export PS1="${green} ➜ ${purple}\w \n${green}\$(__git_ps1 '(%s)')${reset} ❯ "
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# uv
+. "$HOME/.local/bin/env"
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"
