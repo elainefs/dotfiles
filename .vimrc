@@ -3,7 +3,6 @@ call plug#begin()
        " Appearance
         Plug 'vim-airline/vim-airline'
         Plug 'ryanoasis/vim-devicons'
-        Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
        " Utilities
         Plug 'preservim/nerdtree'
@@ -13,12 +12,12 @@ call plug#begin()
       	Plug 'kien/ctrlp.vim'
         Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-"        " Git
+        " Git
         Plug 'airblade/vim-gitgutter'
         Plug 'tpope/vim-fugitive'
         Plug 'rbong/vim-flog'
 
-"        " Completion / linters / formatters
+        " Completion / linters / formatters
         Plug 'plasticboy/vim-markdown'
         Plug 'ap/vim-css-color'
         Plug 'sheerun/vim-polyglot'
@@ -32,7 +31,6 @@ call plug#end()
 let NERDTreeShowHidden = 0
 
 "" Airline Settings
-let g:airline_theme = 'catppuccin'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
@@ -98,8 +96,8 @@ filetype plugin indent on
 syntax on
 set t_Co=256
 set termguicolors
-colorscheme catppuccin
 set background=dark
+colorscheme sorbet
 set number
 set hidden
 set incsearch
