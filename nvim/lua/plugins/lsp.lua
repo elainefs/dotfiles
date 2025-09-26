@@ -16,14 +16,18 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+    },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       require("mason-lspconfig").setup_handlers({
         function(server_name)
           if server_name == "pylsp" then
-            lspconfig.pylsp.setup({
+            vim.lsp.config.pylsp = {
               capabilities = capabilities,
               settings = {
                 pylsp = {
@@ -41,12 +45,14 @@ return {
                   },
                 },
               },
-            })
+            }
+            vim.lsp.enable("pylsp")
           else
             -- Automatically configure each installed server
-            lspconfig[server_name].setup({
+            vim.lsp.config[server_name] = {
               capabilities = capabilities,
-            })
+            }
+            vim.lsp.enable(server_name)
           end
         end,
       })
