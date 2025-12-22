@@ -22,3 +22,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.cmd([[highlight ColorColumn guibg=#2f2f2f]])
   end,
 })
+
+-- Enable ESC to back normal mode in terminal mode
+function _G.set_terminal_keymaps()
+  local opts = {buffer = 0}
+  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+end
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
