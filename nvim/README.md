@@ -11,6 +11,7 @@
 | `Ctrl + a`         | Select all                                      |
 | `Ctrl + h`         | Replace in file                                 |
 | `Ctrl + s`         | Save file                                       |
+| `Ctrl + /` | Comment One Line or Multiple Lines in Visual Mode       |
 | `Tab`              | Next buffer                                     |
 | `Ctrl+Tab`         | Prev buffer                                     |
 | `<space>r`         | Split buffer to right                           |
