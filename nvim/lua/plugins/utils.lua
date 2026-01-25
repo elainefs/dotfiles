@@ -70,6 +70,7 @@ return {
 		{ "wakatime/vim-wakatime", lazy = false },
 	},
 	{
+		-- Indentation guides
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		opts = {
@@ -97,5 +98,11 @@ return {
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
+	},
+	{
+		-- Plugin for integration between LuaLSP and Neovim
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {},
 	},
 }
