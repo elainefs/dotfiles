@@ -99,3 +99,19 @@ vim.keymap.set("n", "<leader>o", "<cmd>lua OpenFolder()<CR>", { desc = "Open Fol
 -- These commands will move the current buffer backwards or forwards in the bufferline
 map("n", "<leader>+", ":BufferLineMoveNext<CR>")
 map("n", "<leader>_", ":BufferLineMovePrev<CR>")
+
+-- Keympas for Multi Cursor - vim-visual-multi
+vim.g.VM_maps = {
+  ["Find Under"]         = "<C-d>",      -- próxima ocorrência
+  ["Find Subword Under"] = "<C-d>",
+  ["Find Under Prev"]    = "<C-S-d>",    -- anterior
+  ["Select All"]         = "<C-l>",      -- selecionar tudo
+  ["Skip Region"]        = "<C-x>",      -- pular ocorrência
+  ["Remove Region"]      = "<C-p>",      -- remover cursor
+  ["Add Cursor Down"]    = "<M-Down>",   -- Alt + ↓
+  ["Add Cursor Up"]      = "<M-Up>",     -- Alt + ↑
+}
+
+-- Themes "default", "purplegray", "ocean", "iceblue", "neon"
+-- vim.g.VM_theme = "neon"
+
