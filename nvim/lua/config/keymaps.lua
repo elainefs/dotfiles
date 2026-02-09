@@ -48,6 +48,9 @@ map("n", "<C-a>", "ggVG")
 map("n", "<C-_>", ":normal gcc<CR>")
 map("v", "<C-_>", ":normal gcc<CR>")
 
+-- Clear search highlighting
+map("n", "<ESC>", ":nohlsearch<cr>")
+
 -- Open Containing Folder
 vim.keymap.set("n", "<leader>p", function()
   local path = vim.fn.expand("%:p:h") -- Get current dir file
