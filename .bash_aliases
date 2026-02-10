@@ -4,8 +4,7 @@ alias ..='cd ..'
 alias gh='cd ~/Github/'
 alias my='cd ~/Github/myNotebook/'
 alias dow='cd ~/Downloads/'
-alias doc='cd ~/Documentos/'
-alias go='cd ~/Govone/'
+alias doc='cd ~/Documents/'
 
 # System
 alias update='sudo apt update'
@@ -17,7 +16,6 @@ alias cp='cp -i'
 # Docker
 # Stop all containers
 alias dk='docker kill $(docker ps -q)'
-alias dgo='docker start my_elasticsearch my_redis my_postgres my_pgadmin my_rabbitmq'
 
 # Git
 alias gs='git status'
