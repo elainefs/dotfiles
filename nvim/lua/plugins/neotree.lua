@@ -1,16 +1,4 @@
 return {
-	-- If you want neo-tree's file operations to work with LSP (updating imports, etc.), you can use a plugin like
-	-- https://github.com/antosha417/nvim-lsp-file-operations:
-	{
-		"antosha417/nvim-lsp-file-operations",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-neo-tree/neo-tree.nvim",
-		},
-		config = function()
-			require("lsp-file-operations").setup()
-		end,
-	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -18,7 +6,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
-			--{ "3rd/image.nvim", opts = {} }, -- Optional image support in preview window: See `# Preview Mode` for more information
+			"3rd/image.nvim",
 			{
 				"s1n7ax/nvim-window-picker", -- for open_with_window_picker keymaps
 				version = "2.*",
@@ -48,6 +36,9 @@ return {
 
 			require("neo-tree").setup({
 				close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+				clipboard = {
+					sync = "global", -- "none" or "global"/"universal" to share a clipboard for each/all Neovim instance(s), respectively
+				},
 				popup_border_style = "rounded",
 				enable_git_status = true,
 				enable_diagnostics = true,
@@ -161,7 +152,10 @@ return {
 						["<2-LeftMouse>"] = "open",
 						["<CR>"] = "open",
 						["<ESC>"] = "cancel", -- close preview or floating neo-tree window
-						["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+						["P"] = {
+							"toggle_preview",
+							config = { use_float = false, use_image_nvim = true, title = "Neo-tree Preview" },
+						},
 						["l"] = "focus_preview",
 						["S"] = "open_split",
 						["s"] = "open_vsplit",
@@ -216,7 +210,7 @@ return {
 						always_show_by_pattern = { -- uses glob style patterns
 							".env*",
 							".git*",
-              ".docker*",
+							".docker*",
 						},
 						never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
 							--".DS_Store",
@@ -331,6 +325,16 @@ return {
 					},
 				},
 			})
+		end,
+	},
+	{
+		"antosha417/nvim-lsp-file-operations",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-neo-tree/neo-tree.nvim",
+		},
+		config = function()
+			require("lsp-file-operations").setup()
 		end,
 	},
 }
