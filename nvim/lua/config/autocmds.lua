@@ -29,3 +29,13 @@ function _G.set_terminal_keymaps()
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
 end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+-- Show Diagnostic Under the Cursor
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+      focus = false,
+      scope = "cursor",
+    })
+  end,
+})
