@@ -20,7 +20,8 @@ vim.opt.mouse = "a" -- Enable mouse usage
 vim.opt.mousemoveevent = true -- Enable mouse events
 vim.opt.virtualedit = "onemore" -- Allow moving the cursor one space beyond the end of the line
 vim.opt.title = true -- Show window title
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 500 -- Time between shortcut
+vim.opt.updatetime = 300 -- Time until new event
 
 -- Clipboard and backup
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
