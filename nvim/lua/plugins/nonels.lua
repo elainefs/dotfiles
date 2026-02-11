@@ -19,6 +19,7 @@ return {
 				"ruff", -- Python linter and formatter
 				"phpcbf", -- Formatter for PHP
 				"phpcs", -- Linter for PHP
+        "mypy"  -- Type Hints for Python
 			},
 			automatic_installation = true,
 		})
@@ -32,6 +33,7 @@ return {
 			formatting.djlint.with({ extra_args = { "--profile=django" } }),
 			formatting.phpcbf.with({ extra_args = { "--standard=PSR12" } }),
 			diagnostics.phpcs.with({ extra_args = { "--standard=PSR12" } }),
+      diagnostics.mypy,
 			require("none-ls.formatting.ruff").with({
 				extra_args = { "--extend-select", "I" },
 			}),
