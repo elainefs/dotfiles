@@ -31,6 +31,18 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 -- Show Diagnostic Under the Cursor
+vim.diagnostic.config({
+  float = {
+    focusable = false,
+    close_events = {
+      "BufLeave",
+      "CursorMoved",
+      "InsertEnter",
+      "FocusLost",
+    },
+  },
+})
+
 vim.api.nvim_create_autocmd("CursorHold", {
   callback = function()
     vim.diagnostic.open_float(nil, {
