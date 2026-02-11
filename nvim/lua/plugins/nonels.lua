@@ -36,6 +36,9 @@ return {
 				extra_args = { "--extend-select", "I" },
 			}),
 			require("none-ls.formatting.ruff_format"),
+			require("none-ls.diagnostics.ruff").with({
+				extra_args = { "--extend-select", "ANN" },
+			}),
 		}
 
 		null_ls.setup({
