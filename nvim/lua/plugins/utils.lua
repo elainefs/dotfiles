@@ -1,11 +1,5 @@
 return {
 	{
-		-- Plugin for integration between LuaLSP and Neovim
-		"folke/lazydev.nvim",
-		ft = "lua",
-		opts = {},
-	},
-	{
 		-- Autoclose parentheses, brackets, quotes, etc.
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
