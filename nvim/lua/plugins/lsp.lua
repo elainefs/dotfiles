@@ -25,7 +25,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "html", "cssls", "ts_ls", "zunba", "phpactor" },
+				ensure_installed = { "lua_ls", "html", "cssls", "ts_ls", "phpactor" },
 				automatic_installation = true,
 			})
 		end,
