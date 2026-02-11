@@ -1,5 +1,5 @@
 local map = function(mode, key, command)
-  vim.api.nvim_set_keymap(mode, key, command, { noremap = true, silent = true })
+	vim.api.nvim_set_keymap(mode, key, command, { noremap = true, silent = true })
 end
 
 vim.g.mapleader = " "
@@ -45,73 +45,57 @@ map("v", ">", ">gv")
 map("n", "<C-a>", "ggVG")
 
 -- Comment lines with Ctrl + /
-map("n", "<C-_>", ":normal gcc<CR>")
-map("v", "<C-_>", ":normal gcc<CR>")
+map("n", "<C-/>", ":normal gcc<CR>")
+map("v", "<C-/>", ":normal gcc<CR>")
 
--- Clear search highlighting
+-- Clear search highlight
 map("n", "<ESC>", ":nohlsearch<cr>")
-
--- Open Containing Folder
-vim.keymap.set("n", "<leader>p", function()
-  local path = vim.fn.expand("%:p:h") -- Get current dir file
-  local open_cmd
-
-  if vim.fn.has("win32") == 1 then
-    open_cmd = "explorer " .. vim.fn.shellescape(path)
-  elseif vim.fn.has("mac") == 1 then
-    open_cmd = "open " .. vim.fn.shellescape(path)
-  else
-    open_cmd = "xdg-open " .. vim.fn.shellescape(path)
-  end
-
-  vim.fn.system(open_cmd)
-end, { noremap = true, silent = true, desc = "Open Containing Folder" })
-
--- Open Folder
-function OpenFolder()
-  local fb = require("telescope").extensions.file_browser.file_browser
-  fb({
-    path = "~/",
-    select_buffer = true,
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
-    attach_mappings = function(prompt_bufnr, mp)
-      local actions = require("telescope.actions")
-      local action_state = require("telescope.actions.state")
-
-      mp("i", "<CR>", function()
-        local entry = action_state.get_selected_entry()
-        local dir = entry.path
-        actions.close(prompt_bufnr)
-        vim.cmd("cd " .. dir)
-        vim.cmd("Neotree focus")
-      end)
-
-      return true
-    end,
-  })
-end
-
-vim.keymap.set("n", "<leader>o", "<cmd>lua OpenFolder()<CR>", { desc = "Open Folder" })
 
 -- Keymaps for Bufferline
 -- These commands will move the current buffer backwards or forwards in the bufferline
 map("n", "<leader>+", ":BufferLineMoveNext<CR>")
 map("n", "<leader>_", ":BufferLineMovePrev<CR>")
 
--- Keympas for Multi Cursor - vim-visual-multi
-vim.g.VM_maps = {
-  ["Find Under"]         = "<C-d>",      -- próxima ocorrência
-  ["Find Subword Under"] = "<C-d>",
-  ["Find Under Prev"]    = "<C-S-d>",    -- anterior
-  ["Select All"]         = "<C-l>",      -- selecionar tudo
-  ["Skip Region"]        = "<C-x>",      -- pular ocorrência
-  ["Remove Region"]      = "<C-p>",      -- remover cursor
-  ["Add Cursor Down"]    = "<M-Down>",   -- Alt + ↓
-  ["Add Cursor Up"]      = "<M-Up>",     -- Alt + ↑
-}
+-- Open Containing Folder
+vim.keymap.set("n", "<leader>p", function()
+	local path = vim.fn.expand("%:p:h") -- Get current dir file
+	local open_cmd
 
--- Themes "default", "purplegray", "ocean", "iceblue", "neon"
--- vim.g.VM_theme = "neon"
+	if vim.fn.has("win32") == 1 then
+		open_cmd = "explorer " .. vim.fn.shellescape(path)
+	elseif vim.fn.has("mac") == 1 then
+		open_cmd = "open " .. vim.fn.shellescape(path)
+	else
+		open_cmd = "xdg-open " .. vim.fn.shellescape(path)
+	end
 
+	vim.fn.system(open_cmd)
+end, { noremap = true, silent = true, desc = "Open Containing Folder" })
+
+-- Open Folder
+function OpenFolder()
+	local fb = require("telescope").extensions.file_browser.file_browser
+	fb({
+		path = "~/",
+		select_buffer = true,
+		respect_gitignore = false,
+		hidden = true,
+		grouped = true,
+		attach_mappings = function(prompt_bufnr, mp)
+			local actions = require("telescope.actions")
+			local action_state = require("telescope.actions.state")
+
+			mp("i", "<CR>", function()
+				local entry = action_state.get_selected_entry()
+				local dir = entry.path
+				actions.close(prompt_bufnr)
+				vim.cmd("cd " .. dir)
+				vim.cmd("Neotree focus")
+			end)
+
+			return true
+		end,
+	})
+end
+
+vim.keymap.set("n", "<C-k><C-o>", "<cmd>lua OpenFolder()<CR>", { desc = "Open Folder" })
