@@ -63,3 +63,27 @@ vim.opt.spelllang = { "pt_br", "en_us" } -- Set languages for spell checking
 -- Enable folding
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
+
+-- Define session options
+vim.opt.sessionoptions:append("localoptions")
+
+-- Configuration for Diagnostic Sign
+vim.diagnostic.config({
+	float = {
+		focusable = false,
+		close_events = {
+			"BufLeave",
+			"CursorMoved",
+			"InsertEnter",
+			"FocusLost",
+		},
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "󰌵",
+		},
+	},
+})
