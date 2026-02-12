@@ -35,8 +35,24 @@ local wakatime = function()
 		end
 
 		uv.timer_start(timer, 500, WAKATIME_UPDATE_INTERVAL, function()
+			local function format_wakatime_output(time)
+				if not time or time == "" then
+					return ""
+				end
+				local hours = time:match("(%d+)%s*hr")
+				if hours then
+					return hours .. "h Coding"
+				end
+
+				local mins = time:match("(%d+)%s*min")
+				if mins then
+					return mins .. "m Coding"
+				end
+				return ""
+			end
+
 			async.run(get_wakatime_time, function(time)
-				state.comp_wakatime_time = time
+				state.comp_wakatime_time = format_wakatime_output(time)
 			end)
 		end)
 
