@@ -1,5 +1,5 @@
 local map = function(mode, key, command)
-	vim.api.nvim_set_keymap(mode, key, command, { noremap = true, silent = true })
+	vim.keymap.set(mode, key, command, { noremap = true, silent = true })
 end
 
 vim.g.mapleader = " "
@@ -9,7 +9,11 @@ map("n", "<C-s>", ":w<CR>")
 map("i", "<C-s>", "<ESC>:w<CR>")
 map("n", "q", ":q<CR>")
 map("v", "q", "<ESC>:q<CR>")
-map("n", "<C-q>", ":bd<CR>")
+map("n", "<C-q>", function()
+	local current = vim.api.nvim_get_current_buf()
+	vim.cmd("bnext")
+	vim.cmd("bdelete " .. current)
+end)
 map("n", "<S-q>", ":%bd<CR>")
 
 -- Neotree
