@@ -54,19 +54,7 @@ return {
 		},
 	},
 	{
-		-- Beautify Notify
-		{
-			"folke/noice.nvim",
-			event = "VeryLazy",
-			opts = {},
-			dependencies = {
-				"MunifTanjim/nui.nvim",
-				"rcarriga/nvim-notify",
-			},
-		},
-	},
-	{
-		-- Wakatime
+		-- WakaTime
 		{ "wakatime/vim-wakatime", lazy = false },
 	},
 	{
