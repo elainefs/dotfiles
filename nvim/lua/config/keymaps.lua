@@ -10,6 +10,7 @@ map("i", "<C-s>", "<ESC>:w<CR>")
 map("n", "q", ":q<CR>")
 map("v", "q", "<ESC>:q<CR>")
 map("n", "<C-q>", ":bd<CR>")
+map("n", "<S-q>", ":%bd<CR>")
 
 -- Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>")
