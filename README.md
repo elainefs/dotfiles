@@ -1,6 +1,6 @@
 # Elaine's dotfiles
 
-My dotfiles to customize my system.
+My dotfiles for customizing my system.
 
 ## dotfiles for
 
@@ -9,6 +9,6 @@ My dotfiles to customize my system.
 - [.bashrc](.bashrc)
 - [.vimrc](.vimrc)
 - Superfile:
-    - [config.toml](superfile/config.toml)
-    - [hotkeys.toml](superfile/hotkeys.toml)
+  - [config.toml](superfile/config.toml)
+  - [hotkeys.toml](superfile/hotkeys.toml)
 - [Kitty](kitty/kitty.conf)
