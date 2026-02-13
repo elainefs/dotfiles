@@ -58,6 +58,9 @@ map("n", "<ESC>", ":nohlsearch<cr>")
 map("n", "<leader>+", ":BufferLineMoveNext<CR>")
 map("n", "<leader>_", ":BufferLineMovePrev<CR>")
 
+-- Substitute the word under cursor with confirm
+map("n", "<C-d>", ":%s/\\<<C-r><C-w>\\>//gc<left><left><left>")
+
 -- Open Containing Folder
 vim.keymap.set("n", "<leader>p", function()
 	local path = vim.fn.expand("%:p:h") -- Get current dir file
