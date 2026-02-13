@@ -11,3 +11,4 @@ My dotfiles to customize my system.
 - Superfile:
     - [config.toml](superfile/config.toml)
     - [hotkeys.toml](superfile/hotkeys.toml)
+- [Kitty](kitty/kitty.conf)
