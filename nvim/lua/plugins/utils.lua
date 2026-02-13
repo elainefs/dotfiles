@@ -27,19 +27,10 @@ return {
 		end,
 	},
 	{
-		-- Show keymap available for current buffer
+		-- Show available keymaps for current buffer when press <leader> key
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{
-				"<leader>k",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
+		opts = { preset = "helix" },
 	},
 	{
 		-- WakaTime
