@@ -61,6 +61,9 @@ map("n", "<leader>_", ":BufferLineMovePrev<CR>")
 -- Substitute the word under cursor with confirm
 map("n", "<C-d>", ":%s/\\<<C-r><C-w>\\>//gc<left><left><left>")
 
+-- Search new occurrence without jump
+map("n", "*", ":keepjumps normal! mi*`i<CR>")
+
 -- Open Containing Folder
 vim.keymap.set("n", "<leader>p", function()
 	local path = vim.fn.expand("%:p:h") -- Get current dir file
