@@ -37,11 +37,21 @@ return {
 		{ "wakatime/vim-wakatime", lazy = false },
 	},
 	{
-		-- Live Preview - md, html, css, js, etc
+		-- Live Preview - md, html, css, js, etc, render inside awrit in kitty terminal
 		"brianhuster/live-preview.nvim",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
+		config = function()
+			require("livepreview.config").set({
+				port = 5500,
+				browser = "kitty @ launch --type=window awrit",
+				dynamic_root = false,
+				sync_scroll = true,
+				picker = "telescope",
+				address = "127.0.0.1",
+			})
+		end,
 	},
 	{
 		"hedyhli/outline.nvim",
