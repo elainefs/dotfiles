@@ -26,18 +26,6 @@ return {
 			require("colorizer").setup()
 		end,
 	},
-	-- {
-	--   -- Auto Save
-	--   "okuuva/auto-save.nvim",
-	--   opts = {
-	--     debounce_delay = 1000,
-	--     ftrigger_events = {
-	--       immediate_save = { "FocusLost" }, -- "BufLeave", "FocusLost", "QuitPre"
-	--       defer_save = { "InsertLeave", "TextChanged" },
-	--       cancel_deferred_save = { "InsertEnter" },
-	--     },
-	--   },
-	-- },
 	{
 		-- Show keymap available for current buffer
 		"folke/which-key.nvim",
