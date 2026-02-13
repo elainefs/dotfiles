@@ -8,6 +8,7 @@ vim.g.maplocalleader = " "
 map("n", "<C-s>", ":w<CR>")
 map("i", "<C-s>", "<ESC>:w<CR>")
 map("n", "q", ":q<CR>")
+map("v", "q", "<ESC>:q<CR>")
 map("n", "<C-q>", ":bd<CR>")
 
 -- Neotree
