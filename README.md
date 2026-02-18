@@ -12,3 +12,4 @@ My dotfiles for customizing my system.
   - [config.toml](superfile/config.toml)
   - [hotkeys.toml](superfile/hotkeys.toml)
 - [Kitty](kitty/kitty.conf)
+- [Tmux](.tmux.conf)
