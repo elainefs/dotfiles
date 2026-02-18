@@ -7,11 +7,12 @@ alias dow='cd ~/Downloads/'
 alias doc='cd ~/Documents/'
 
 # System
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
+alias update='sudo apt update && apt list --upgradable'
+alias upgrade='sudo apt upgrade -y'
 alias ll='ls -l'
 alias la='ls -A'
 alias cp='cp -i'
+alias ecop="echo $PATH | tr ':' '\n'"
 
 # Docker
 # Stop all containers
@@ -38,3 +39,9 @@ alias xampp='sudo /opt/lampp/manager-linux-x64.run'
 
 # Neovim
 alias nv='nvim'
+
+# Tmux
+alias txls='tmux ls'
+alias txn='tmux new'
+alias txks='tmux kill-server'
+alias txa='tmux a'
