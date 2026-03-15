@@ -1,0 +1,38 @@
+# ------------------------------
+# swaylock configuration
+# ------------------------------
+
+## General
+# image=$HOME/Pictures/Wallpaper/black-background.jpg
+color=000000
+scaling=fill
+indicator-radius=70
+indicator-thickness=7
+ignore-empty-password
+indicator-caps-lock
+
+## Catppuccin Mocha Palette
+# Central circle
+inside-color=1e1e2e88
+inside-ver-color=89b4fa88
+inside-wrong-color=f38ba888
+inside-clear-color=a6e3a188
+
+# External ring
+ring-color=cba6f7
+ring-ver-color=89b4fa
+ring-wrong-color=f38ba8
+ring-clear-color=a6e3a1
+
+# Borders and Lines
+line-color=00000000
+separator-color=00000000
+
+# Typing Highlight
+key-hl-color=89b4fa
+
+# Text
+text-color=cdd6f4
+text-ver-color=1e1e2e
+text-wrong-color=1e1e2e
+text-clear-color=1e1e2e
