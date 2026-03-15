@@ -13,3 +13,4 @@ My dotfiles for customizing my system.
   - [hotkeys.toml](superfile/hotkeys.toml)
 - [Kitty](kitty/kitty.conf)
 - [Tmux](.tmux.conf)
+- [Sway](sway/README.md)
