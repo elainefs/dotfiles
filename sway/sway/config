@@ -1,0 +1,38 @@
+##############################
+### Configuration for sway ###
+##############################
+
+### Wallpaper configuration
+output * bg $HOME/Pictures/Wallpaper/background.jpg fill
+
+### Mako notifications
+exec_always --no-startup-id mako
+
+### Network Manager
+exec_always --no-startup-id nm-applet
+
+### Polikit agent
+exec_always --no-startup-id /usr/bin/lxqt-policykit-agent
+
+### Clipboard
+exec_always --no-startup-id wl-paste --watch cliphist store
+
+### Define waybar as status bar
+bar {
+  swaybar_command waybar
+}
+
+### Define cursor
+seat * cursor set_cursor Adwaita 24
+
+### Clamshell Mode
+# Internal Screen
+set $laptop_screen eDP-1
+# Disable internal screen when laptop lid closes
+bindswitch --reload --locked lid:on  output $laptop_screen disable
+# Enable internal screen when laptop lid opens
+bindswitch --reload --locked lid:off output $laptop_screen enable
+
+# Include other specific configurations
+include $HOME/.config/sway/config.d/*
+include /etc/sway/config.d/*
