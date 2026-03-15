@@ -1,0 +1,59 @@
+/**
+  * Rofi theme for Power Menu - Catppuccin Mocha
+**/
+
+@import "~/.config/rofi/theme.rasi"
+
+window {
+    width:            300px;
+    background-color: @base;
+    border:           2px;
+    border-color:     @blue;
+    border-radius:    12px;
+}
+
+mainbox {
+    background-color: transparent;
+    children:         [listview];
+}
+
+listview {
+    background-color: transparent;
+    fixed-columns:    true;
+    columns:          5;
+    lines:            1;
+    spacing:          10px;
+    cycle:            true;
+    dynamic:          true;
+    layout:           vertical;
+    padding:          15px;
+}
+
+element {
+    background-color: @surface0;
+    text-color:       @text;
+    padding:          10px 0px;
+    border-radius:    8px;
+    orientation:      vertical;
+    children:         [element-text];
+}
+
+element-icon {
+    size:             0px;
+    padding:          0px;
+    margin:           0px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    font:             "JetBrainsMono Nerd Font 14";
+    horizontal-align: 0.45;
+    vertical-align:   0.45;
+}
+
+element selected {
+    background-color: @blue;
+    text-color:       @base;
+}
