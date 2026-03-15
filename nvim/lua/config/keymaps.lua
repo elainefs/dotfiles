@@ -53,6 +53,8 @@ map("n", "<C-a>", "ggVG")
 -- Comment lines with Ctrl + /
 map("n", "<C-/>", ":normal gcc<CR>")
 map("v", "<C-/>", ":normal gcc<CR>")
+map("n", "<C-_>", ":normal gcc<CR>") -- for tmux
+map("v", "<C-_>", ":normal gcc<CR>") -- for tmux
 
 -- Clear search highlight
 map("n", "<ESC>", ":nohlsearch<cr>")
