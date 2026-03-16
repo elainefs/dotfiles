@@ -23,4 +23,6 @@ Make the scripts executable:
 
 `sudo chmod +x ~/.config/sway/scripts/window-switcher.sh`
 
+`sudo chmod +x ~/.config/sway/scripts/wallpaper.sh`
+
 `sudo chmod +x ~/.config/waybar/scripts/wittr.sh`

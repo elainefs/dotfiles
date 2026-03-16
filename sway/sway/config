@@ -3,7 +3,8 @@
 ##############################
 
 ### Wallpaper configuration
-output * bg $HOME/Pictures/Wallpaper/background.jpg fill
+#output * bg $HOME/Pictures/Wallpaper/background.jpg fill
+exec_always --no-startup-id $HOME/.config/sway/scripts/wallpaper.sh
 
 ### Mako notifications
 exec_always --no-startup-id mako
