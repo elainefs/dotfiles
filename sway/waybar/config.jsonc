@@ -152,6 +152,6 @@
     "format": " ",
     "interval": "once",
     "exec": "echo 'Clipboard'",
-    "on-click": "cliphist list | rofi -dmenu -m 1 -p 'Clipboard' | cliphist decode | wl-copy"
+    "on-click": "cliphist list | rofi -dmenu -m 1 -p 'Clipboard' -theme-str 'listview {columns: 1;}' | cliphist decode | wl-copy"
   }
 }
