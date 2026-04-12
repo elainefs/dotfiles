@@ -1,7 +1,7 @@
 return {
 	"catppuccin/nvim",
 	config = function()
-		local is_transparent = true
+		local is_transparent = false
 
 		function ToggleTransparency()
 			is_transparent = not is_transparent
