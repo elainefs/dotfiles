@@ -1,5 +1,5 @@
 * {
-  font-family: FontAwesome, sans-serif;
+  font-family: 'JetBrainsMono Nerd Font';
   font-size: 12px;
 }
 
@@ -72,7 +72,7 @@ button:hover {
 }
 
 #custom-power {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 #window,
