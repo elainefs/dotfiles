@@ -91,7 +91,7 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
 # Xampp
-export PATH=/opt/lampp/bin:$PATH
+export PATH=$PATH:/opt/lampp/bin
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
