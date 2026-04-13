@@ -14,3 +14,9 @@ My dotfiles for customizing my system.
 - [Kitty](kitty/kitty.conf)
 - [Tmux](.tmux.conf)
 - [Sway](sway/README.md)
+
+Create symbolic links:
+
+```bash
+curl -o- https://raw.githubusercontent.com/elainefs/dotfiles/main/install.sh | bash
+```
