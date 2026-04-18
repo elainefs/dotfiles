@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "height": 25,
-  "spacing": 4,
+  "spacing": 5,
   "modules-left": [
     "sway/workspaces",
     "sway/mode",
@@ -26,7 +26,14 @@
     "disable-scroll": true,
     "all-outputs": true,
     "warp-on-scroll": false,
-    "format": "{name}"
+    "format": "{name}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
   },
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
@@ -84,6 +91,7 @@
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
     "critical-threshold": 80,
+    "on-click": "kitty -e btop",
     "format": "{temperatureC}°C {icon}",
     "format-icons": [
       "",
@@ -128,7 +136,7 @@
   "bluetooth": {
     "format": " {status}",
     "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "format-connected-battery": "{device_battery_percentage}% ",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
