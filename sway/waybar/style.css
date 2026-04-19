@@ -1,6 +1,6 @@
 * {
-  font-family: 'JetBrainsMono Nerd Font';
-  font-size: 12px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
 }
 
 window#waybar {
@@ -47,6 +47,10 @@ button:hover {
   background-color: #f38ba8;
 }
 
+#workspaces button.empty {
+  color: #cdd6f4;
+}
+
 #clock,
 #battery,
 #cpu,
@@ -60,6 +64,7 @@ button:hover {
 #custom-media,
 #custom-power,
 #custom-weather,
+#custom-notification,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -71,47 +76,39 @@ button:hover {
   color: #ffffff;
 }
 
-#custom-power {
-  font-size: 12px;
-}
-
 #window,
 #workspaces {
   margin: 0 4px;
 }
 
-/* if workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
-}
-
-/* if workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
+.modules-right>widget:last-child>#custom-notification,
+.modules-right>widget:last-child>#custom-power,
+.modules-right>widget:last-child>#clock {
+  margin-right: 10px;
 }
 
 /* styling custom widget */
 menu {
-    background-color: #1e1e2e;
-    border: 2px solid #89b4fa;
-    border-radius: 10px;
-    padding: 5px;
+  background-color: #1e1e2e;
+  border: 2px solid #89b4fa;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 menu menuitem {
-    background-color: transparent;
-    color: #cdd6f4;
-    padding: 5px 10px;
-    transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  color: #cdd6f4;
+  padding: 5px 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 menu menuitem:hover {
-    background-color: #89b4fa;
-    color: #1e1e2e;
-    border-radius: 5px;
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  border-radius: 5px;
 }
 
 menu menuitem label {
-    font-size: 14px;
-    font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font";
 }
