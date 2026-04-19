@@ -6,8 +6,8 @@
 #output * bg $HOME/Pictures/Wallpaper/background.jpg fill
 exec_always --no-startup-id $HOME/.config/sway/scripts/wallpaper.sh
 
-### Mako notifications
-exec_always --no-startup-id mako
+### Sway Notification Center
+exec_always --no-startup-id swaync
 
 ### Network Manager
 exec_always --no-startup-id nm-applet
