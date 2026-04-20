@@ -4,16 +4,20 @@ My dotfiles for customizing my system.
 
 ## dotfiles for
 
-- [Neovim](nvim/README.md)
-- [.bash_aliases](.bash_aliases)
-- [.bashrc](.bashrc)
-- [.vimrc](.vimrc)
-- Superfile:
-  - [config.toml](superfile/config.toml)
-  - [hotkeys.toml](superfile/hotkeys.toml)
-- [Kitty](kitty/kitty.conf)
-- [Tmux](.tmux.conf)
-- [Sway](sway/README.md)
+- [.bash_aliases](./.bash_aliases)
+- [.bashrc](./.bashrc)
+- [.vimrc](./.vimrc)
+- [neovim](./.config/nvim/README.md)
+- [superfile](./.config/superfile/config.toml)
+- [kitty](./.config/kitty/kitty.conf)
+- [tmux](./.tmux.conf)
+- [sway](./.config/sway/config)
+- [rofi](./.config/rofi/config.rasi)
+- [swappy](./.config/swappy/config)
+- [swaylock](./.config/swaylock/config)
+- [swaync](./.config/swaync/config.json)
+- [mako](./.config/mako/config)
+- [waybar](./.config/waybar/config.jsonc)
 
 Create symbolic links:
 
