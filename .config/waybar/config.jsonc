@@ -47,7 +47,7 @@
       ""
     ],
     "tooltip": true,
-    "tooltip-format": "{app}: {title}"
+    "tooltip-format": "{title}"
   },
   "tray": {
     "spacing": 10
