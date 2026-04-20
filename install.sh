@@ -9,28 +9,28 @@ git clone https://github.com/elainefs/dotfiles.git
 echo -n "Set .bashrc? [Y/n] "
 read bashrc
 if [ "$bashrc" == "y" -o "$bashrc" == "Y" -o "$bashrc" == "" ]; then
-    rm -rf $HOME/.bashrc
+    rm -f $HOME/.bashrc
     ln -s $DOTFILES/.bashrc $HOME/.bashrc
 fi
 
 echo -n "Set .bash_aliases? [Y/n] "
 read bash_aliases
 if [ "$bash_aliases" == "y" -o "$bash_aliases" == "Y" -o "$bash_aliases" == "" ]; then
-    rm -rf $HOME/.bash_aliases
+    rm -f $HOME/.bash_aliases
     ln -s $DOTFILES/.bash_aliases $HOME/.bash_aliases
 fi
 
 echo -n "Set .tmux.conf? [Y/n] "
 read tmux
 if [ "$tmux" == "y" -o "$tmux" == "Y" -o "$tmux" == "" ]; then
-    rm -rf $HOME/.tmux.conf
+    rm -f $HOME/.tmux.conf
     ln -s $DOTFILES/.tmux.conf $HOME/.tmux.conf
 fi
 
 echo -n "Set .vimrc? [Y/n] "
 read vimrc
 if [ "$vimrc" == "y" -o "$vimrc" == "Y" -o "$vimrc" == "" ]; then
-    rm -rf $HOME/.vimrc
+    rm -f $HOME/.vimrc
     ln -s $DOTFILES/.vimrc $HOME/.vimrc
 fi
 
