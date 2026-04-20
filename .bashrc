@@ -104,10 +104,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 export GIT_EDITOR=nvim
 
-# Deno
-. "/home/elaine/.deno/env"
-source /home/elaine/.local/share/bash-completion/completions/deno.bash
-
 # Bash Theme
 green="\[\033[1;32m\]"
 blue="\[\033[1;34m\]"
@@ -121,9 +117,3 @@ export PS1="${green} ➜ ${purple}\w \n${green}\$(__git_ps1 '(%s)')${reset} ❯ 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# uv
-. "$HOME/.local/bin/env"
-eval "$(uv generate-shell-completion bash)"
-eval "$(uvx --generate-shell-completion bash)"
