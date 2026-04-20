@@ -3,8 +3,12 @@
 DOTFILES=$HOME/dotfiles
 
 # Download dotfiles
-cd $HOME
-git clone https://github.com/elainefs/dotfiles.git
+if [ $DOTFILES ]; then
+    cd $DOTFILES && git pull
+else
+    cd $HOME
+    git clone https://github.com/elainefs/dotfiles.git
+fi
 
 echo -n "Set .bashrc? [Y/n] "
 read bashrc
