@@ -117,3 +117,7 @@ export PS1="${green} ➜ ${purple}\w \n${green}\$(__git_ps1 '(%s)')${reset} ❯ 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2026-04-22 04:30:36
+export PATH="$PATH:/home/elaine/.local/bin"
+eval "$(register-python-argcomplete pipx)"
