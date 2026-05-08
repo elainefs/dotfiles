@@ -22,11 +22,13 @@ vim.opt.virtualedit = "onemore" -- Allow moving the cursor one space beyond the 
 vim.opt.title = true -- Show window title
 vim.opt.timeoutlen = 500 -- Time between shortcut
 vim.opt.updatetime = 300 -- Time until new event
-
--- Clipboard and backup
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
+vim.opt.fillchars = { eob = " " } -- Character to fill statuslines, etc
+
+-- Backup and swapfile
 vim.opt.backup = false -- Do not create backup files
 vim.opt.writebackup = false -- Do not create temporary backups
+vim.opt.swapfile = false -- Do not create swapfile
 
 -- Cursor and text appearance
 vim.opt.cursorline = true -- Highlight the current line
@@ -66,24 +68,3 @@ vim.opt.foldlevel = 99
 
 -- Define session options
 vim.opt.sessionoptions:append("localoptions")
-
--- Configuration for Diagnostic Sign
-vim.diagnostic.config({
-	float = {
-		focusable = false,
-		close_events = {
-			"BufLeave",
-			"CursorMoved",
-			"InsertEnter",
-			"FocusLost",
-		},
-	},
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "󰌵",
-		},
-	},
-})

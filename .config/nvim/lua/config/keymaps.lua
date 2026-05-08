@@ -1,20 +1,17 @@
-local map = function(mode, key, command)
-	vim.keymap.set(mode, key, command, { noremap = true, silent = true })
+local map = function(mode, key, command, desc)
+	vim.keymap.set(mode, key, command, { noremap = true, silent = true, desc = desc })
 end
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+require("config.functions")
+
 map("n", "<C-s>", ":w<CR>")
 map("i", "<C-s>", "<ESC>:w<CR>")
-map("n", "q", ":q<CR>")
-map("v", "q", "<ESC>:q<CR>")
-map("n", "<C-q>", function()
-	local current = vim.api.nvim_get_current_buf()
-	vim.cmd("bnext")
-	vim.cmd("bdelete " .. current)
-end)
 map("n", "<S-q>", ":%bd<CR>")
+map("n", "q", BufferDel)
+map("v", "q", "<cmd>lua BufferDel()<CR>")
 
 -- Neotree
 map("n", "<C-b>", ":Neotree toggle<CR>")
@@ -40,8 +37,14 @@ map("n", "<S-Tab>", ":bp<CR>")
 map("n", "<leader>r", ":vsplit<CR>")
 map("n", "<leader>b", ":split<CR>")
 
--- Replace
-map("n", "<C-h>", ":%s/")
+-- Replace word under the cursor
+map("n", "<C-h>", ":%s/\\<<C-r><C-w>\\>//gc<left><left><left>")
+
+-- Search new occurrence without jump
+map("n", "*", ":keepjumps normal! mi*`i<CR>")
+
+-- Clear search highlight
+map("n", "<ESC>", ":nohlsearch<CR>")
 
 -- Stay in indent mode
 map("v", "<", "<gv")
@@ -56,60 +59,13 @@ map("v", "<C-/>", ":normal gcc<CR>")
 map("n", "<C-_>", ":normal gcc<CR>") -- for tmux
 map("v", "<C-_>", ":normal gcc<CR>") -- for tmux
 
--- Clear search highlight
-map("n", "<ESC>", ":nohlsearch<cr>")
-
 -- Keymaps for Bufferline
 -- These commands will move the current buffer backwards or forwards in the bufferline
 map("n", "<leader>+", ":BufferLineMoveNext<CR>")
 map("n", "<leader>_", ":BufferLineMovePrev<CR>")
 
--- Substitute the word under cursor with confirm
-map("n", "<C-d>", ":%s/\\<<C-r><C-w>\\>//gc<left><left><left>")
-
--- Search new occurrence without jump
-map("n", "*", ":keepjumps normal! mi*`i<CR>")
-
 -- Open Containing Folder
-vim.keymap.set("n", "<leader>p", function()
-	local path = vim.fn.expand("%:p:h") -- Get current dir file
-	local open_cmd
-
-	if vim.fn.has("win32") == 1 then
-		open_cmd = "explorer " .. vim.fn.shellescape(path)
-	elseif vim.fn.has("mac") == 1 then
-		open_cmd = "open " .. vim.fn.shellescape(path)
-	else
-		open_cmd = "xdg-open " .. vim.fn.shellescape(path)
-	end
-
-	vim.fn.system(open_cmd)
-end, { noremap = true, silent = true, desc = "Open Containing Folder" })
+map("n", "<leader>p", OpenContainerFolder, "Open Container Folder")
 
 -- Open Folder
-function OpenFolder()
-	local fb = require("telescope").extensions.file_browser.file_browser
-	fb({
-		path = "~/",
-		select_buffer = true,
-		respect_gitignore = false,
-		hidden = true,
-		grouped = true,
-		attach_mappings = function(prompt_bufnr, mp)
-			local actions = require("telescope.actions")
-			local action_state = require("telescope.actions.state")
-
-			mp("i", "<CR>", function()
-				local entry = action_state.get_selected_entry()
-				local dir = entry.path
-				actions.close(prompt_bufnr)
-				vim.cmd("cd " .. dir)
-				vim.cmd("Neotree focus")
-			end)
-
-			return true
-		end,
-	})
-end
-
-vim.keymap.set("n", "<C-k><C-o>", "<cmd>lua OpenFolder()<CR>", { desc = "Open Folder" })
+map("n", "<C-k><C-o>", OpenFolder, "Open Folder")
