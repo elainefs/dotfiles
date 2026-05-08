@@ -11,6 +11,7 @@ alias update='sudo apt update && apt list --upgradable'
 alias upgrade='sudo apt upgrade -y'
 alias ll='ls -l'
 alias la='ls -A'
+alias lla='ls -lA'
 alias cp='cp -i'
 alias ecop="echo $PATH | tr ':' '\n'"
 
