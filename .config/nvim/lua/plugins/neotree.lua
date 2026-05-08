@@ -214,6 +214,7 @@ return {
 							--".null-ls_*",
 						},
 					},
+					bind_to_cwd = true,
 					follow_current_file = {
 						enabled = true, -- This will find and focus the file in the active buffer every time
 						--               -- the current file is changed while the tree is open.

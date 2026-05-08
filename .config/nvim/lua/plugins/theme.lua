@@ -22,7 +22,7 @@ return {
 			vim.cmd("colorscheme catppuccin")
 		end
 
-		vim.api.nvim_set_keymap("n", "<leader>bg", ":lua ToggleTransparency()<CR>", {desc = "Toggle Transparency"}) -- Toggle Transparency
-		ToggleTransparency()
+		vim.api.nvim_set_keymap("n", "<leader>bg", ":lua ToggleTransparency()<CR>", {desc = "Toggle Transparency"})
+    ToggleTransparency()
 	end,
 }
