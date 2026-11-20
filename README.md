@@ -7,7 +7,7 @@ My dotfiles for customizing my system.
 - [.bash_aliases](./.bash_aliases)
 - [.bashrc](./.bashrc)
 - [.vimrc](./.vimrc)
-- [neovim](./.config/nvim/README.md)
+- [neovim](./.config/nvim/)
 - [superfile](./.config/superfile/config.toml)
 - [kitty](./.config/kitty/kitty.conf)
 - [tmux](./.tmux.conf)
